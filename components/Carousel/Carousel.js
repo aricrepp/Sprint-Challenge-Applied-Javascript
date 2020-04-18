@@ -17,3 +17,42 @@
     <div class="right-button"> > </div>
   </div>
 */
+
+function carouselComponent(img){
+
+  const carouselCon = document.createElement('div');
+  carouselCon.classList.add('carousel');
+
+  const leftBtn = document.createElement('div');
+  leftBtn.classList.add('left-button');
+  leftBtn.textContent = '<';
+  carouselCon.appendChild(leftBtn);
+
+  // const imgOne = document.createElement('img');
+  // imgOne.src = img;
+  // carouselCon.appendChild(imgOne);
+
+  const rightBtn = document.createElement('div');
+  rightBtn.classList.add('right-button');
+  rightBtn.textContent = '>';
+  carouselCon.appendChild(rightBtn);
+
+  return carouselCon;
+
+}
+
+let images = ["./assets/carousel/mountains.jpeg", "./assets/carousel/computer.jpeg", "./assets/carousel/trees.jpeg", "./assets/carousel/turntable.jpeg"];
+
+
+
+const newContainer = document.querySelector('.carousel-container');
+const car = document.querySelector('.carousel');
+const left = document.querySelector('.left-button');
+const right = document.querySelector('.right-button');
+
+car.addEventListener('click', (e) => {
+
+});
+
+const newCarousel = carouselComponent();
+newContainer.appendChild(newCarousel);
