@@ -54,21 +54,12 @@ const cardContainer = document.querySelector('.cards-container');
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
 .then((response) => {
     console.log(response);
-
-    let newArray = response.data.articles.javascript;
-    console.log("clicked");
-    for(let i = 0; i < newArray.length; i++){
-        const card = newCard(newArray[i].headline, newArray[i].authorPhoto, newArray[i].authorName);
-        cardContainer.appendChild(card);
-    }
-
     tabBtn.forEach((el) => {
         el.addEventListener("click", (e) => {
             if(e.target.textContent === 'javascript'){
                 document.querySelectorAll('.card').forEach(e => e.remove());
                 console.log("javascript");
                 let newArray = response.data.articles.javascript;
-                console.log("clicked");
                 for(let i = 0; i < newArray.length; i++){
                     const card = newCard(newArray[i].headline, newArray[i].authorPhoto, newArray[i].authorName);
                     cardContainer.appendChild(card);
@@ -78,7 +69,6 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
                 document.querySelectorAll('.card').forEach(e => e.remove());
                 console.log("bootstrap");
                 let newArray = response.data.articles.bootstrap;
-                console.log("clicked");
                 for(let i = 0; i < newArray.length; i++){
                     const card = newCard(newArray[i].headline, newArray[i].authorPhoto, newArray[i].authorName);
                     cardContainer.appendChild(card);
@@ -88,7 +78,6 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
                 document.querySelectorAll('.card').forEach(e => e.remove());
                 console.log("technology");
                 let newArray = response.data.articles.technology;
-                console.log("clicked");
                 for(let i = 0; i < newArray.length; i++){
                     const card = newCard(newArray[i].headline, newArray[i].authorPhoto, newArray[i].authorName);
                     cardContainer.appendChild(card);
@@ -98,7 +87,6 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
                 document.querySelectorAll('.card').forEach(e => e.remove());
                 console.log("jquery");
                 let newArray = response.data.articles.jquery;
-                console.log("clicked");
                 for(let i = 0; i < newArray.length; i++){
                     const card = newCard(newArray[i].headline, newArray[i].authorPhoto, newArray[i].authorName);
                     cardContainer.appendChild(card);
@@ -108,7 +96,6 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
                 document.querySelectorAll('.card').forEach(e => e.remove());
                 console.log("nodejs");
                 let newArray = response.data.articles.node;
-                console.log("clicked");
                 for(let i = 0; i < newArray.length; i++){
                     const card = newCard(newArray[i].headline, newArray[i].authorPhoto, newArray[i].authorName);
                     cardContainer.appendChild(card);
