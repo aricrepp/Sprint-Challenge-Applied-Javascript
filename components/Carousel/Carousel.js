@@ -18,39 +18,41 @@
   </div>
 */
 
-function carouselComponent(){
+function carouselComponent(img){
 
-  const carousel = document.createElement('div');
-  carousel.classList.add('carousel');
+  const carouselCon = document.createElement('div');
+  carouselCon.classList.add('carousel');
 
   const leftBtn = document.createElement('div');
   leftBtn.classList.add('left-button');
-  carousel.appendChild(leftBtn);
+  leftBtn.textContent = '<';
+  carouselCon.appendChild(leftBtn);
 
-  const imgOne = document.createElement('img');
-  imgOne.src = './assets/carousel/mountains.jpeg';
-  carousel.appendChild(imgOne);
-
-  const imgTwo = document.createElement('img');
-  imgTwo.src = './assets/carousel/computer.jpeg';
-  carousel.appendChild(imgTwo);
-
-  const imgThree = document.createElement('img');
-  imgThree.src = './assets/carousel/trees.jpeg';
-  carousel.appendChild(imgThree);
-
-  const imgFour = document.createElement('img');
-  imgFour.src = './assets/carousel/turntable.jpeg';
-  carousel.appendChild(imgFour);
+  // const imgOne = document.createElement('img');
+  // imgOne.src = img;
+  // carouselCon.appendChild(imgOne);
 
   const rightBtn = document.createElement('div');
   rightBtn.classList.add('right-button');
-  carousel.appendChild(rightBtn);
+  rightBtn.textContent = '>';
+  carouselCon.appendChild(rightBtn);
+
+  return carouselCon;
 
 }
 
+let images = ["./assets/carousel/mountains.jpeg", "./assets/carousel/computer.jpeg", "./assets/carousel/trees.jpeg", "./assets/carousel/turntable.jpeg"];
 
-const container = document.querySelector('.carousel-container');
-console.log(container);
+
+
+const newContainer = document.querySelector('.carousel-container');
+const car = document.querySelector('.carousel');
+const left = document.querySelector('.left-button');
+const right = document.querySelector('.right-button');
+
+car.addEventListener('click', (e) => {
+
+});
+
 const newCarousel = carouselComponent();
-container.appendChild(newCarousel);
+newContainer.appendChild(newCarousel);
